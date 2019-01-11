@@ -39,6 +39,14 @@ cat ./sqlist | while read sqlist
 do
 mysqldump --routines --events --lock-tables $sqlist > /home/support/$sdir/$dir/sql/$sqlist\.sql
 done
+while true; do
+    read -p "Do you wish to archive domains *.tar.gz?" yn
+    case $yn in
+        [Yy]* ) tar -czvf /home/support/$sdir/$dir/domains/$domain\.tar.gz /home/support/lmr/$ttdir/domains/$domain; rm -rf /home/support/$sdir/$dir/domains/$domain; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no:.";;
+    esac
+done
 echo "============================================"
 echo "DONE"
 echo "============================================"
