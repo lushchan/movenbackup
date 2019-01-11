@@ -42,7 +42,7 @@ done
 while true; do
     read -p "Do you wish to archive domains *.tar.gz?" yn
     case $yn in
-        [Yy]* ) tar -czvf /home/support/$sdir/$dir/domains/$domain\.tar.gz /home/support/lmr/$ttdir/domains/$domain; rm -rf /home/support/$sdir/$dir/domains/$domain; break;;
+        [Yy]* ) tar -czvf /home/support/$sdir/$dir/domains/$domain\.tar.gz /home/support/$sdir/$dir/domains/$domain; rm -rf /home/support/$sdir/$dir/domains/$domain; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no:.";;
     esac
